@@ -20,11 +20,9 @@ const util = new function () {
 }
 
 const data = (new function () {
-    let int = 0;
-    let arr = {};
     this.create = (obj,callback) => {
         util.ajax({method: "POST",body: JSON.stringify(obj)},callback);
-        return obj;
+
     }
     this.getAll = (callback) => {
         util.ajax({method:"GET"},callback);
@@ -32,12 +30,12 @@ const data = (new function () {
     this.get = (id,callback) => util.ajax({method:"GET",path:"/"+id},callback);
     this.update = (obj,callback) => {
         util.ajax({method: "PUT",body: JSON.stringify(obj)},callback);
-        return obj;
+
     }
     this.delete = (id,callback) => {
         util.ajax({method: "DELETE",path:"/"+id},callback);
     }
-    this.init();
+
 });
 /*data.create({
     name: "Демчук С.А.",

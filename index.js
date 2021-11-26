@@ -1,17 +1,10 @@
 const http = require("http"),
-    crud = require("/crud");
+    crud = require("./crud");
     staticSrv = require("node-static");
 const staticFileDir = new staticSrv.Server("./public")
 const echo = (res,content)=>{
     res.end(JSON.stringify(content));
 }
-/*
-crud.create({
-    name: "Демчук С.А.",
-    birth: "08.08.2003",
-    group: "ЦПИ-11",
-    phone: "+70000000000"
-});*/
 
 const student = (req,res)=>{
     res.writeHead(200,{"Content-type": "application/json"});
@@ -60,6 +53,6 @@ const handler = function(req, res){
     staticFileDir.serve(req,res);
 }
 
-http.createServer(handler).listen(8090, ()=>{
+http.createServer(handler).listen(8091, ()=>{
     console.log("run");
 })

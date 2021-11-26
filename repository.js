@@ -30,7 +30,7 @@ module.exports = new function(){
             writeFileSync(fileName,"{}");
         }
         data = JSON.parse(readFileSync(fileName,{encoding:"UTF-8"}));
-        for(let el of data){
+        for(let el in data){
             if(data[el].Id > increment) increment = data[el].Id;
         }
         increment++;

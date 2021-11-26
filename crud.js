@@ -1,4 +1,4 @@
-const repo = require("../../repository")
+const repo = require("./repository.js")
 
 module.exports = new function(){
     this.get = id=>repo.get(id);
