@@ -25,7 +25,7 @@ module.exports = new function(){
         return {remove: "done"}
     }
 
-    stat(fileName,(err,stats)=>{
+    stat(fileName,(err)=>{
         if(err && err.code==="ENOENT"){
             writeFileSync(fileName,"{}");
         }
